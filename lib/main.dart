@@ -11,20 +11,33 @@ class Home extends StatelessWidget {
         centerTitle: true,
         backgroundColor: Colors.red[600],
       ),
-      body: Row(
+      body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.end,
         children: <Widget>[
-          Text('Hello World'),
-          FlatButton(
-            onPressed: () {},
-            child: Text('Click me'),
-            color: Colors.amber,
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[
+              Text('One'),
+              Text('Two'),
+              Text('Three'),
+            ],
           ),
           Container(
+            padding: EdgeInsets.all(20.0),
             color: Colors.cyan,
+            child: Text('One'),
+          ),
+          Container(
             padding: EdgeInsets.all(30.0),
-            child: Text('inside container'),
+            color: Colors.pinkAccent,
+            child: Text('Two'),
+          ),
+          Container(
+            padding: EdgeInsets.all(40.0),
+            color: Colors.amber,
+            child: Text('Three'),
           ),
         ],
       ),
