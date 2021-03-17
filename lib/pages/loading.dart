@@ -8,17 +8,25 @@ class Loading extends StatefulWidget {
 }
 
 class _LoadingState extends State<Loading> {
-  void getData() async {
-    var url = Uri.https('jsonplaceholder.typicode.com', '/todos/1');
+  void getTime() async {
+    var url = Uri.https('www.worldtimeapi.org', '/api/ip');
     var response = await http.get(url);
     Map data = jsonDecode(response.body);
-    print(data['title']);
+
+    String datetime = data['datetime'];
+    int offset = data['raw_offset'];
+
+    DateTime now = DateTime.parse(datetime);
+    print('now : $now');
+
+    now = now.add(Duration(seconds: offset));
+    print('now : $now');
   }
 
   @override
   void initState() {
     super.initState();
-    getData();
+    getTime();
   }
 
   @override
