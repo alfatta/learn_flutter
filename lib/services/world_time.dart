@@ -11,7 +11,7 @@ class WorldTime {
 
   Future<void> getTime() async {
     try {
-      var requestUri = Uri.https('www.worldtimeapi.org', '/api/timezones/$url');
+      var requestUri = Uri.https('www.worldtimeapi.org', '/api/timezone/$url');
       var response = await http.get(requestUri);
 
       Map data = jsonDecode(response.body);
