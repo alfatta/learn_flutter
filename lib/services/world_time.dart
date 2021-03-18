@@ -15,6 +15,7 @@ class WorldTime {
     try {
       var requestUri = Uri.https('www.worldtimeapi.org', '/api/timezone/$url');
       var response = await http.get(requestUri);
+      print('response : ${response.body}');
 
       Map data = jsonDecode(response.body);
 
